@@ -1,0 +1,37 @@
+集装箱资料智能生成系统：Windows EXE 云端构建说明
+================================================
+
+重要：这个压缩包是“可云端构建的源项目”，不是已经生成并验证的 EXE 成品。
+当前聊天执行环境不能运行 Windows，因此不能诚实地声称已经完成 Windows EXE 实机测试。
+
+你不需要在自己的 Windows 电脑安装 Python。构建由 GitHub 的 Windows 云端电脑完成。
+
+操作步骤（需要一个 GitHub 账号）：
+1. 登录 https://github.com/ ，新建一个空的 Private 或 Public repository。
+2. 将本压缩包解压，把里面所有文件和 .github 文件夹上传到仓库根目录。
+   注意：.github 是隐藏样式目录，必须一起上传；仓库根目录应直接看到
+   “集装箱资料智能生成系统.py”、“requirements.txt”、“集装箱资料智能生成系统.spec”。
+3. 打开仓库的 Actions 页面，选择 “Build Windows EXE”。
+4. 点击 “Run workflow”，等待 Windows 构建完成。
+5. 打开成功的运行记录，在 Artifacts 区域下载
+   “Container-AI-Windows-Full-Package”。
+6. 解压下载的 Artifact，里面的“集装箱资料智能生成系统_免费完整版.zip”
+   才是供最终用户使用的完整分发包。
+
+构建内容：
+- Windows x64 / Python 3.11 云端构建
+- PyInstaller 单文件 EXE
+- Tesseract OCR 可执行文件及中文、英文语言数据一并打包
+- Word 模板、使用说明和免费分享许可
+
+最终用户：
+- 不需要安装 Python
+- 不需要单独安装 Tesseract
+- 解压正式构建产物后，双击“集装箱资料智能生成系统.exe”启动
+
+注意事项：
+- 第一次启动单文件 EXE 可能需要稍等，因为它会释放内置组件。
+- OCR 对模糊、反光、倾斜照片的识别可能不准确，业务字段必须人工核对。
+- 只有 GitHub Actions 显示构建成功，并且实际在 Windows 10/11 运行测试通过后，
+  才能称为正式可交付版本。
+- 若构建失败，请把 Actions 失败日志截图发回聊天，我可以继续修复。

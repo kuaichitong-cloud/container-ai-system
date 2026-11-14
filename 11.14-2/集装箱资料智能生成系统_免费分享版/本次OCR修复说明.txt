@@ -1,0 +1,9 @@
+本次修复说明（2026-11-14）
+
+1. OCR 不再只查找程序内的 tesseract 子目录。
+2. 会依次检查程序内置目录、C:\Program Files\Tesseract-OCR、C:\Program Files (x86)\Tesseract-OCR，以及 PATH 中的 Tesseract。
+3. 同时验证 chi_sim.traineddata 和 eng.traineddata 是否存在，并通过 --tessdata-dir 明确指定语言数据目录。
+4. OCR 初始化失败时会在程序状态栏显示实际错误，不再静默吞掉异常、让用户误以为只是识别率低。
+5. 已将用户最新提供的 TEFU4028297(1)(3).docx 模板和 CICU1996746(2).zip 测试资料放入本包。
+
+注意：本包是修复后的源码/云端构建包，不是已在 Windows 电脑实机验证的 EXE。当前制作环境不能生成或验证 Windows EXE。若要得到免 Python、双击即用的版本，仍需用包内 GitHub Actions 工作流在 Windows 云端构建成功，再下载构建产物。
